@@ -1,13 +1,16 @@
 package trip;
+
+import rideScheduler.*;
 import Types.Coordinate;
 
 public class Vehicle {
 	private Ride ride;
 	private Coordinate loc;
+	private VehicleManager vehicleManager;
 	
-	public Vehicle()
+	public Vehicle(VehicleManager vm)
 	{
-
+		vehicleManager = vm;
 	}
 	
 	public Coordinate getLocation()
@@ -25,6 +28,7 @@ public class Vehicle {
 	public void setRide(Ride cRide)
 	{
 		ride = cRide;
+		vehicleManager.updateList(this);
 	}
 	
 }
