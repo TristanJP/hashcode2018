@@ -4,21 +4,34 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import Types.Coordinate;
+import trip.Ride;
 
 public class Importer {
+	
+	private static Importer instance = null;
 	
 	private String path = "";
 	private String[] readLine;
 	
+	private ArrayList<Ride> rides = new ArrayList<>();
+	
 	private Integer[] parameters; //Rows, columns, vehicles in fleet, ride count, ride bonus, number of steps
 	
-	public Importer() {
+	public static Importer getInstance() {
+		if (instance == null) {
+			instance = new Importer();
+		}
+		return instance;
+	}
+	
+	private Importer() {
 		this("./a_example.in");
 	}
 
-	public Importer(String path) {
+	private Importer(String path) {
 		this.path = path;
 		this.read();
 	}
@@ -51,6 +64,8 @@ public class Importer {
 						Integer startEarliest = new Integer(params[4]);
 						Integer endLatest = new Integer(params[5]);
 						
+						Ride ride = new Ride(start, finish, startEarliest, endLatest);
+						rides.add(ride);
 						//System.out.println("Start: " + start.toString() + ". End: " + finish.toString() + ". Earliest start is " + startEarliest + ". Latest finish is " + endLatest);
 						//create vehicles
 						//ride bonus
@@ -75,6 +90,10 @@ public class Importer {
 	
 	public int getNumberOfSteps() {
 		return this.parameters[5];
+	}
+	
+	public ArrayList<Ride> getRides() {
+		return this.rides;
 	}
 	
 	
