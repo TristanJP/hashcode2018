@@ -25,5 +25,8 @@ public class Coordinate {
 		this.yPos = yPos;
 	}
 
+	public String toString() {
+		return "(" + getX() + ", " + getY() + ")";
+	}
 	
 }

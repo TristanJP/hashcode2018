@@ -5,13 +5,14 @@ import Types.Coordinate;
 public class Ride {
 	
 	private Coordinate startPos, endPos;
-	private int earliestStep, latestStep;
+	private int earliestStep, latestStep, distance;
 	
 	public Ride(Coordinate startPosition, Coordinate endPosition, int earliestStep, int latestStep) {
 		setStartPos(startPosition);
 		setEndPos(endPosition);
 		setEarliestStep(earliestStep);
 		setLatestStep(latestStep);
+		setDistance();
 	}
 	
 	public Coordinate getStartPos() {
@@ -44,6 +45,14 @@ public class Ride {
 
 	private void setLatestStep(int latestStep) {
 		this.latestStep = latestStep;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+	private void setDistance() {
+		distance = Math.abs((startPos.getX()-endPos.getX())+(startPos.getY()-endPos.getY()));
 	}
 
 }
