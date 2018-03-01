@@ -28,7 +28,11 @@ public class Importer {
 	}
 	
 	private Importer() {
-		this("./a_example.in");
+		//this("./a_example.in");
+		//this("./b_should_be_easy.in");
+		this("./c_no_hurry.in");
+		//this("./d_metropolis.in");
+		//this("./e_high_bonus.in");
 	}
 
 	private Importer(String path) {
