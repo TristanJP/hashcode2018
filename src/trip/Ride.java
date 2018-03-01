@@ -5,19 +5,20 @@ import Types.Coordinate;
 public class Ride {
 	
 	private Coordinate startPos, endPos;
-	private int earliestStep;
+	private int earliestStep, latestStep;
 	
-	public Ride(Coordinate startPosition, Coordinate endPosition, int earliestStep) {
+	public Ride(Coordinate startPosition, Coordinate endPosition, int earliestStep, int latestStep) {
 		setStartPos(startPosition);
 		setEndPos(endPosition);
 		setEarliestStep(earliestStep);
+		setLatestStep(latestStep);
 	}
 	
 	public Coordinate getStartPos() {
 		return startPos;
 	}
 	
-	public void setStartPos(Coordinate startPos) {
+	private void setStartPos(Coordinate startPos) {
 		this.startPos = startPos;
 	}
 	
@@ -25,7 +26,7 @@ public class Ride {
 		return endPos;
 	}
 	
-	public void setEndPos(Coordinate endPos) {
+	private void setEndPos(Coordinate endPos) {
 		this.endPos = endPos;
 	}
 
@@ -33,8 +34,16 @@ public class Ride {
 		return earliestStep;
 	}
 
-	public void setEarliestStep(int earliestStep) {
+	private void setEarliestStep(int earliestStep) {
 		this.earliestStep = earliestStep;
+	}
+
+	public int getLatestStep() {
+		return latestStep;
+	}
+
+	private void setLatestStep(int latestStep) {
+		this.latestStep = latestStep;
 	}
 
 }
