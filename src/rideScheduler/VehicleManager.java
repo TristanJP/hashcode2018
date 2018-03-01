@@ -56,5 +56,9 @@ public class VehicleManager {
 		}
 		return indexToInsert;
 	}
+	
+	public Vehicle getVehicle(int index) {
+		return vehicles.get(index);
+	}
 
 }
