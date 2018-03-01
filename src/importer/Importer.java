@@ -51,7 +51,10 @@ public class Importer {
 						Integer startEarliest = new Integer(params[4]);
 						Integer endLatest = new Integer(params[5]);
 						
-						System.out.println("Start: " + start.toString() + ". End: " + finish.toString() + ". Earliest start is " + startEarliest + ". Latest finish is " + endLatest);
+						//System.out.println("Start: " + start.toString() + ". End: " + finish.toString() + ". Earliest start is " + startEarliest + ". Latest finish is " + endLatest);
+						//create vehicles
+						//ride bonus
+						//number of steps
 					}
 				}
 			} catch (FileNotFoundException ex) {
@@ -60,6 +63,18 @@ public class Importer {
 				System.out.println("Input/Output exceception");
 			}
 		}
+	}
+	
+	public int getNumberOfVehicles() {
+		return this.parameters[2];
+	}
+	
+	public int getRideBonus() {
+		return this.parameters[4];
+	}
+	
+	public int getNumberOfSteps() {
+		return this.parameters[5];
 	}
 	
 	
