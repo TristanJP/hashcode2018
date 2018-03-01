@@ -5,7 +5,7 @@ import Types.Coordinate;
 public class Ride {
 	
 	private Coordinate startPos, endPos;
-	private int earliestStep, latestStep, distance;
+	private int earliestStep, latestStep, distance, distanceLeft;
 	
 	public Ride(Coordinate startPosition, Coordinate endPosition, int earliestStep, int latestStep) {
 		setStartPos(startPosition);
@@ -13,6 +13,7 @@ public class Ride {
 		setEarliestStep(earliestStep);
 		setLatestStep(latestStep);
 		setDistance();
+		setDistanceLeft(distance);
 	}
 	
 	public Coordinate getStartPos() {
@@ -53,6 +54,21 @@ public class Ride {
 
 	private void setDistance() {
 		distance = Math.abs((startPos.getX()-endPos.getX())+(startPos.getY()-endPos.getY()));
+	}
+	
+	/**
+	 * decreases the distance left by 1
+	 */
+	public void travel() {
+		distanceLeft--;
+	}
+
+	public int getDistanceLeft() {
+		return distanceLeft;
+	}
+
+	private void setDistanceLeft(int distanceLeft) {
+		this.distanceLeft = distanceLeft;
 	}
 
 }
