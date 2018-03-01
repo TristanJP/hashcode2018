@@ -13,7 +13,7 @@ public class Importer {
 	private Integer[] parameters;
 	
 	public Importer() {
-		this("a_example.in");
+		this("./a_example.in");
 	}
 
 	public Importer(String path) {
@@ -33,11 +33,14 @@ public class Importer {
 					if (firstLine) {
 						String[] params;
 						params = line.split(" ");
-						this.parameters = new Integer[params.length - 1];
-						for (int i = 0; i < params.length - 1; i++) {
+						this.parameters = new Integer[params.length];
+						for (int i = 0; i < params.length; i++) {
 							this.parameters[i] = new Integer(params[i]);
 						}
 						firstLine = false;
+						for (int i = 0; i < parameters.length; i++) {
+							System.out.println(parameters[i]);
+						}
 					} else {
 						
 					}
