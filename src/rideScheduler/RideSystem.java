@@ -10,6 +10,8 @@ public class RideSystem {
 		ticker++;
 	}
 
+	
+	
 	public static void main(String args[]) {
 		Importer importer = Importer.getInstance();
 		
