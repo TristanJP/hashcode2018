@@ -13,7 +13,7 @@ public class VehicleManager {
 		vehicles = new ArrayList<Vehicle>(); 
 		for(int i = 0; i < vNum; i++)
 		{
-			vehicles.add(new Vehicle());
+			vehicles.add(new Vehicle(this));
 		}
 	}
 	
@@ -24,7 +24,7 @@ public class VehicleManager {
 		}
 	}
 	
-	public ArrayList<Vehicle> getVehices()
+	public ArrayList<Vehicle> getVehicles()
 	{
 		return vehicles;
 	}
