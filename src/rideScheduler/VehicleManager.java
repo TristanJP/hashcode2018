@@ -28,7 +28,7 @@ public class VehicleManager {
 		vehicles.add(indexToInsert+1, vehicle);
 	}
 	
-	public ArrayList<Vehicle> getVehices()
+	public ArrayList<Vehicle> getVehicles()
 	{
 		return vehicles;
 	}
@@ -55,6 +55,10 @@ public class VehicleManager {
 			}
 		}
 		return indexToInsert;
+	}
+	
+	public Vehicle getVehicle(int index) {
+		return vehicles.get(index);
 	}
 
 }
