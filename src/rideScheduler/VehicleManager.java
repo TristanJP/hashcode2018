@@ -21,8 +21,8 @@ public class VehicleManager {
 		Coordinate newPos = vehicle.getRide().getEndPos();
 		int indexToInsert = 0;
 		
-		indexToInsert = sortX(indexToInsert, newPos);
-		indexToInsert = sortY(indexToInsert, newPos);
+		//indexToInsert = sortX(indexToInsert, newPos);
+		//indexToInsert = sortY(indexToInsert, newPos);
 		
 		vehicles.remove(vehicle);
 		vehicles.add(indexToInsert+1, vehicle);

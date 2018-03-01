@@ -77,4 +77,7 @@ public class Ride {
 		this.distanceLeft = distanceLeft;
 	}
 
+	public String toString() {
+		return this.id.toString();
+	}
 }
