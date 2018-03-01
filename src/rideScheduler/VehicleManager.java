@@ -58,7 +58,7 @@ public class VehicleManager {
 	
 	public int sortY(int indexToInsert, Coordinate newPos) {
 		for (int i = indexToInsert; i < vehicles.size(); i++) {
-			if (vehicles.get(i).getLocation().getY() <= newPos.getY()) {
+			if ((vehicles.get(i).getLocation().getY() <= newPos.getY()) || (vehicles.get(i).getLocation().getX() > newPos.getX())) {
 				indexToInsert = i;
 			}
 			else {
