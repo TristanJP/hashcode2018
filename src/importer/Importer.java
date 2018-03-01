@@ -30,9 +30,9 @@ public class Importer {
 	private Importer() {
 		//this("./a_example.in");
 		//this("./b_should_be_easy.in");
-		this("./c_no_hurry.in");
+		//this("./c_no_hurry.in");
 		//this("./d_metropolis.in");
-		//this("./e_high_bonus.in");
+		this("./e_high_bonus.in");
 	}
 
 	private Importer(String path) {
@@ -45,6 +45,7 @@ public class Importer {
 	 */
 	public void read() {
 		if (!this.path.equals("")) {
+			int currentLine = 0;
 			try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 				boolean firstLine = true;
 				String line;
@@ -68,8 +69,10 @@ public class Importer {
 						Integer startEarliest = new Integer(params[4]);
 						Integer endLatest = new Integer(params[5]);
 						
-						Ride ride = new Ride(start, finish, startEarliest, endLatest);
+						Ride ride = new Ride(currentLine, start, finish, startEarliest, endLatest);
 						rides.add(ride);
+						
+						currentLine++;
 						//System.out.println("Start: " + start.toString() + ". End: " + finish.toString() + ". Earliest start is " + startEarliest + ". Latest finish is " + endLatest);
 						//create vehicles
 						//ride bonus
