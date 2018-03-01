@@ -13,24 +13,13 @@ public class VehicleManager {
 		vehicles = new ArrayList<Vehicle>(); 
 		for(int i = 0; i < vNum; i++)
 		{
-			vehicles.add(new Vehicle());
+			vehicles.add(new Vehicle(this));
 		}
 	}
 	
 	public void updateList(Vehicle vehicle) {
 		Coordinate newPos = vehicle.getRide().getEndPos();
 		int indexToInsert = 0;
-		
-		for (int i = 0; i < vehicles.size(); i++) {
-			if (vehicles.get(i).getLocation().getX() <= newPos.getX()) {
-				if (vehicles.get(i).getLocation().getY() <= newPos.getY()) {
-					indexToInsert = i;
-				}
-				else {
-					
-				}
-			}
-		}
 		
 		indexToInsert = sortX(indexToInsert, newPos);
 		indexToInsert = sortY(indexToInsert, newPos);
