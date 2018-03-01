@@ -13,4 +13,8 @@ public class VehicleManager {
 			generatedVehicles.add(new Vehicle());
 		}
 	}
+	public ArrayList<Vehicle> getGeneratedVehices()
+	{
+		return generatedVehicles;
+	}
 }
