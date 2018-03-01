@@ -59,7 +59,7 @@ public class RideQueue  {
 				}
 			}
 			
-			while (queue.peek() != null) {
+			/*while (queue.peek() != null) {
 				try {
 					Ride ride = queue.take();
 					System.out.println("Starting at " + ride.getEarliestStep() + ", lasting for " + ride.getDistance() + " steps.");
@@ -67,7 +67,7 @@ public class RideQueue  {
 					e.printStackTrace();
 				}
 				
-			}
+			}*/
 		}
 	}
 	
