@@ -15,6 +15,14 @@ public class RideSystem {
 		
 		RideQueue rideQueue = new RideQueue();
 		
+		VehicleManager vehicleManager = new VehicleManager(importer.getNumberOfVehicles());
+		
+		RideManager rideManager = new RideManager(rideQueue, vehicleManager);
+		
+		rideManager.initialise();
+		
+		
+		
 		
 	}
 }
