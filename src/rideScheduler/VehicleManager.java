@@ -24,4 +24,9 @@ public class VehicleManager {
 		}
 	}
 	
+	public ArrayList<Vehicle> getVehices()
+	{
+		return vehicles;
+	}
+
 }
