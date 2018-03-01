@@ -4,10 +4,12 @@ import Types.Coordinate;
 
 public class Ride {
 	
+	private Integer id;
 	private Coordinate startPos, endPos;
 	private int earliestStep, latestStep, distance, distanceLeft;
 	
-	public Ride(Coordinate startPosition, Coordinate endPosition, int earliestStep, int latestStep) {
+	public Ride(Integer id, Coordinate startPosition, Coordinate endPosition, int earliestStep, int latestStep) {
+		this.id = id;
 		setStartPos(startPosition);
 		setEndPos(endPosition);
 		setEarliestStep(earliestStep);
@@ -50,6 +52,10 @@ public class Ride {
 
 	public int getDistance() {
 		return distance;
+	}
+	
+	public Integer getID() {
+		return this.id;
 	}
 
 	private void setDistance() {
