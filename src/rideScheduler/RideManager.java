@@ -4,7 +4,7 @@ import trip.*;
 import java.util.Queue;
 import importer.*;
 
-public class RideManager {
+public class RideManager implements Ticker {
 	private Queue<Ride> rideQueue;
 	private VehicleManager vehicleManager;
 	
@@ -31,7 +31,7 @@ public class RideManager {
 		}
 	}
 	
-	public void step() 
+	public void tick() 
 	{
 		
 	}

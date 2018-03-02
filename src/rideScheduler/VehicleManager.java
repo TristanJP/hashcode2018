@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import Types.Coordinate;
 import trip.Vehicle;
 
-public class VehicleManager {
+public class VehicleManager implements Ticker {
 	
 	private ArrayList<Vehicle> vehicles;
 	

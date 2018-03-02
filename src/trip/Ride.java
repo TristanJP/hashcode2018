@@ -1,8 +1,9 @@
 package trip;
 
 import Types.Coordinate;
+import rideScheduler.*;
 
-public class Ride {
+public class Ride implements Ticker {
 	
 	private Integer id;
 	private Coordinate startPos, endPos;
