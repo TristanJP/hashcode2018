@@ -23,7 +23,7 @@ public class RideManager implements Ticker {
 	public void tick() {
 		//System.out.println("cunt");
 		vehicleManager.tick();
-		//findClosestVehicle();
+		findClosestVehicle();
 		
 		
 		ArrayList<Vehicle> av = vehicleManager.getAvailableVehicles();
@@ -55,8 +55,8 @@ public class RideManager implements Ticker {
 			Ride r = pendingRides.get(i);
 			
 			Vehicle currentV = null;
-			for (Vehicle v : vehicleManager.getAvailableVehicles()){
-				if (v.getRide().equals(r)){
+			for (Vehicle v : vehicleManager.getVehicles()){
+				if (v.getRide() == r){
 					currentV = v;
 				}
 			}
