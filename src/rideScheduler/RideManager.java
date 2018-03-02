@@ -27,7 +27,7 @@ public class RideManager {
 			v.setRide(r);	
 			
 			//TEMP
-			System.out.println("" + i + " " + r);
+			System.out.println(1 + " " + r);
 		}
 	}
 	
