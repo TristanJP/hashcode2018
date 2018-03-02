@@ -8,6 +8,11 @@ public class Coordinate {
 		setX(xPos);
 		setY(yPos);
 	}
+	
+	public void move(int x, int y) {
+		setX(x);
+		setY(y);
+	}
 
 	public int getX() {
 		return xPos;
