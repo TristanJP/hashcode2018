@@ -62,13 +62,13 @@ public class Vehicle {
 	public void tick() {
 		if (getRide() != null) {
 			if (!isAtStartPoint()) {
-				if ((this.getLocation().getX() -  getRide().getStartPos().getX()) > 0) { //forwards along X
+				if ((this.getLocation().getX() < getRide().getStartPos().getX())) { //forwards along X
 					this.getLocation().move(1, 0);
-				} else if ((getRide().getStartPos().getX() -  this.getLocation().getX()) > 0) { //backwards along X
+				} else if ((this.getLocation().getX() > getRide().getStartPos().getX())) { //backwards along X
 					this.getLocation().move(-1, 0);
-				} else if (Math.abs(this.getLocation().getY() -  getRide().getStartPos().getY()) > 0){ //forwards along Y
+				} else if ((this.getLocation().getY() < getRide().getStartPos().getY())){ //forwards along Y
 					this.getLocation().move(0, 1);
-				} else if ((getRide().getStartPos().getY() -  this.getLocation().getY()) > 0) { //backwards along Y
+				} else if ((this.getLocation().getY() > getRide().getStartPos().getY())) { //backwards along Y
 					this.getLocation().move(0, -1);
 				}
 			}
@@ -80,13 +80,13 @@ public class Vehicle {
 			if (isAtStartPoint()) {
 				if (RideSystem.getTick() > this.ride.getEarliestStep()) {
 					this.ride.tick();
-					if ((this.getLocation().getX() -  getRide().getEndPos().getX()) > 0) { //forwards along X
+					if ((this.getLocation().getX() < getRide().getEndPos().getX())) { //forwards along X
 						this.getLocation().move(1, 0);
-					} else if ((getRide().getEndPos().getX() -  this.getLocation().getX()) > 0) { //backwards along X
+					} else if ((this.getLocation().getX() > getRide().getEndPos().getX())) { //backwards along X
 						this.getLocation().move(-1, 0);
-					} else if (Math.abs(this.getLocation().getY() -  getRide().getEndPos().getY()) > 0){ //forwards along Y
+					} else if ((this.getLocation().getY() < getRide().getEndPos().getY())){ //forwards along Y
 						this.getLocation().move(0, 1);
-					} else if ((getRide().getEndPos().getY() -  this.getLocation().getY()) > 0) { //backwards along Y
+					} else if ((this.getLocation().getY() > getRide().getEndPos().getY())) { //backwards along Y
 						this.getLocation().move(0, -1);
 					}
 					if (this.ride.getDistanceLeft() == 0) {

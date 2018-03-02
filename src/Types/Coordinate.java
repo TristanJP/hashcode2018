@@ -10,6 +10,9 @@ public class Coordinate {
 	}
 	
 	public void move(int x, int y) {
+		
+		System.out.println("Something moved " + x + " in the X, and " + y + " in the Y.");
+		
 		setX(getX() + x);
 		setY(getY() + y);
 	}
