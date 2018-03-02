@@ -31,4 +31,8 @@ public class Vehicle {
 		vehicleManager.updateList(this);
 	}
 	
+	public void tick() {
+		this.ride.tick();
+	}
+	
 }
