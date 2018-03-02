@@ -73,11 +73,6 @@ public class RideManager implements Ticker {
 			}
 			
 		}
-		Ride ride = rideQueue.poll();
-		
-		if (ride != null) {
-			
-		}
 	}
 
 }
