@@ -25,7 +25,12 @@ public class VehicleManager {
 		indexToInsert = sortY(indexToInsert, newPos);
 		
 		vehicles.remove(vehicle);
-		vehicles.add(indexToInsert+1, vehicle);
+		try {
+			vehicles.add(indexToInsert+1, vehicle);
+		}
+		catch(IndexOutOfBoundsException e){
+			vehicles.add(vehicle);
+		}
 	}
 	
 	public ArrayList<Vehicle> getVehicles()
@@ -35,7 +40,16 @@ public class VehicleManager {
 	
 	public int sortX(int indexToInsert, Coordinate newPos) {
 		for (int i = indexToInsert; i < vehicles.size(); i++) {
-			if (vehicles.get(i).getLocation().getX() <= newPos.getX()) {
+			Vehicle v = vehicles.get(i);
+			if (v == null) {
+				System.out.println("vehicle");
+				}
+			Coordinate c = v.getLocation();
+			if (c == null) {
+				System.out.println("coordinate");
+				}
+			int x = c.getX();
+			if (x <= newPos.getX()) {
 				indexToInsert = i;
 			}
 			else {
@@ -47,7 +61,10 @@ public class VehicleManager {
 	
 	public int sortY(int indexToInsert, Coordinate newPos) {
 		for (int i = indexToInsert; i < vehicles.size(); i++) {
-			if (vehicles.get(i).getLocation().getY() <= newPos.getY()) {
+			Vehicle v = vehicles.get(i);
+			Coordinate c = v.getLocation();
+			int y = c.getY();
+			if (y <= newPos.getY()) {
 				indexToInsert = i;
 			}
 			else {

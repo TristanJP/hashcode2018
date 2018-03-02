@@ -11,6 +11,7 @@ public class Vehicle {
 	public Vehicle(VehicleManager vm)
 	{
 		vehicleManager = vm;
+		setLocation(new Coordinate(0,0));
 	}
 	
 	public Coordinate getLocation()

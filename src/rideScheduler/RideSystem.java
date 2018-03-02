@@ -21,9 +21,7 @@ public class RideSystem {
 		
 		rideManager.initialise();
 		
-		
-		
-		
+			
 	}
 }
 
