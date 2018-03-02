@@ -86,10 +86,12 @@ public class Vehicle {
 					//System.out.println("Vehicle ride is in progress");
 					if (this.ride.getDistanceLeft() == 0) {
 						ridesCompleted.add(this.ride);
+						
 						//System.out.println("Ride has been completed");
 						removeRide();
 						this.atStartPoint = false;
 					} else {
+						this.ride.setStarted();
 						this.ride.tick();
 						if ((this.getLocation().getX() < getRide().getEndPos().getX())) { //forwards along X
 							this.getLocation().move(1, 0);

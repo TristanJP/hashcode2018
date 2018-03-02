@@ -2,6 +2,7 @@ package rideScheduler;
 
 import trip.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Queue;
 import importer.*;
 
@@ -9,6 +10,9 @@ public class RideManager implements Ticker {
 	private Queue<Ride> rideQueue;
 	private ArrayList<Ride> pendingRides;
 	private VehicleManager vehicleManager;
+	
+	//debug
+	private int ticks;
 	
 	public RideManager(RideQueue rq, VehicleManager vm) 
 	{
@@ -18,19 +22,50 @@ public class RideManager implements Ticker {
 		
 		initialise();
 		
+		//debug
+		ticks = 0;
 	}
 	
 	public void tick() {
 		//System.out.println("cunt");
 		vehicleManager.tick();
+		
+		//pendingRides.trimToSize();
+		
+		//debug
+				ticks++;
+				//System.out.println("pendingRides size: " + pendingRides.size() + "\nTick starting: " + ticks
+				//		+ "\nrideQueue size: " + rideQueue.size() + "\navailable vehicles: " + vehicleManager.getAvailableVehicles().size());
+		
+		if (pendingRides.size() > 0) {
+			//System.out.println("");;
+			for (Iterator<Ride> it = pendingRides.iterator(); it.hasNext(); ) {
+				if (it.next().getStarted() == true) {
+					it.remove();
+					
+				}
+			}
+		}
+		
+		
+		
+		//pendingRides.trimToSize();
+		
+		
+		
 		findClosestVehicle();
 		
 		
 		ArrayList<Vehicle> av = vehicleManager.getAvailableVehicles();
 		while (av.size() > 0) {
 			Ride r = rideQueue.poll();
+			if (r != null) {
 			pendingRides.add(r);
 			av.get(0).setRide(r);
+			}
+			else {
+				//System.out.println("ride queue empty");
+			}
 			//System.out.println("newRide");
 		}
 	}
