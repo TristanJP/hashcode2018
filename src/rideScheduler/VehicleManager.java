@@ -43,6 +43,10 @@ public class VehicleManager implements Ticker {
 		return vehicles;
 	}
 	
+	public ArrayList<Vehicle> getAvailableVehicles() {
+		return availableVehicles;
+	}
+	
 	public int sortX(int indexToInsert, Coordinate newPos) {
 		for (int i = indexToInsert; i < vehicles.size(); i++) {
 			Vehicle v = vehicles.get(i);
