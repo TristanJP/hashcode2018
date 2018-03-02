@@ -33,6 +33,9 @@ public class Vehicle {
 	
 	public void tick() {
 		this.ride.tick();
+		if (this.ride.getDistanceLeft() == 0) {
+			this.ride = null;
+		}
 	}
 	
 }

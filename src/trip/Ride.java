@@ -57,6 +57,10 @@ public class Ride {
 	public Integer getID() {
 		return this.id;
 	}
+	
+	public void tick() {
+		travel();
+	}
 
 	private void setDistance() {
 		distance = Math.abs((startPos.getX()-endPos.getX())+(startPos.getY()-endPos.getY()));
