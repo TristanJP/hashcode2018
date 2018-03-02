@@ -46,8 +46,31 @@ public class RideManager implements Ticker {
 		for (int i = 0; i < pendingLength; i++) {
 			Ride r = pendingRides.get(i);
 			
-			int distance = r.getStartPos().getDistanceBetween(r.getVehicle().getLocation());
-			int availableLength = vehicleManager.get
+			Vehicle currentV = null;
+			for (Vehicle v : vehicleManager.getAvailableVehicles()){
+				if (v.getRide().equals(r)){
+					currentV = v;
+				}
+			}
+			Vehicle closestVehicle = currentV;
+			int distance = r.getStartPos().getDistanceBetween(currentV.getLocation());
+			int lowestDistance = distance;
+			int availableLength = vehicleManager.getAvailableVehicles().size();
+			
+			for (int j = 0; j < availableLength; j++) {
+				Vehicle v = vehicleManager.getAvailableVehicles().get(j);
+				int d = r.getStartPos().getDistanceBetween(v.getLocation());
+				
+				if (d < lowestDistance) {
+					lowestDistance = d;
+					closestVehicle = v;
+				}				
+			}
+			
+			if (lowestDistance < distance) {
+				currentV.removeRide();
+				closestVehicle.setRide(r);
+			}
 			
 		}
 		Ride ride = rideQueue.poll();
