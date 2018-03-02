@@ -12,6 +12,7 @@ public class Vehicle {
 	private VehicleManager vehicleManager;
 	
 	private ArrayList<Ride> ridesCompleted = new ArrayList<>();
+	private boolean atStartPoint = false;
 	
 	public Vehicle(VehicleManager vm)
 	{
@@ -41,6 +42,10 @@ public class Vehicle {
 		return this.ridesCompleted;
 	}
 	
+	public boolean isAtStartPoint() {
+		return this.atStartPoint;
+	}
+	
 	public String toString() {
 		String returnString = new Integer(this.ridesCompleted.size()).toString();
 		for (Ride ride : this.ridesCompleted) {
@@ -59,12 +64,15 @@ public class Vehicle {
 				this.getLocation().move(0, 1);
 			} else if ((getRide().getStartPos().getY() -  this.getLocation().getY()) > 0) { //backwards along Y
 				this.getLocation().move(0, -1);
+			} else { //At start point
+				atStartPoint = true;
 			}
 			
 			this.ride.tick();
 			if (this.ride.getDistanceLeft() == 0) {
 				ridesCompleted.add(this.ride);
 				this.ride = null;
+				this.atStartPoint = false;
 			}
 			
 		}
