@@ -37,4 +37,7 @@ public class Coordinate {
 		return "(" + getX() + ", " + getY() + ")";
 	}
 	
+	public int getDistanceBetween(Coordinate end) {
+		return Math.abs((xPos-end.getX())+(yPos-end.getY()));
+	}
 }
