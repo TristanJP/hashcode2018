@@ -4,9 +4,9 @@ import importer.Importer;
 
 public class RideSystem {
 	
-	private int ticker;
+	private static int ticker;
 	
-	public void tick() {
+	public static void tick() {
 		ticker++;
 	}
 
@@ -20,6 +20,10 @@ public class RideSystem {
 		RideManager rideManager = new RideManager(rideQueue, vehicleManager);
 		
 		rideManager.initialise();
+		
+		while (ticker < importer.getNumberOfSteps()) {
+			tick();
+		}
 		
 			
 	}
