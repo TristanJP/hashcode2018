@@ -10,8 +10,8 @@ public class Coordinate {
 	}
 	
 	public void move(int x, int y) {
-		setX(x);
-		setY(y);
+		setX(getX() + x);
+		setY(getY() + y);
 	}
 
 	public int getX() {
