@@ -73,26 +73,30 @@ public class Vehicle {
 				}
 			}
 			
-			if (this.getLocation().equals(this.ride.getStartPos())) {
+			if ((this.getLocation().getX() == this.getRide().getStartPos().getX()) &&(this.getLocation().getY() == this.getRide().getStartPos().getY())) {
 				this.atStartPoint = true;
+				System.out.println("Vehicle is at start point and waiting");
 			}
 			
 			if (isAtStartPoint()) {
 				if (RideSystem.getTick() > this.ride.getEarliestStep()) {
-					this.ride.tick();
-					if ((this.getLocation().getX() < getRide().getEndPos().getX())) { //forwards along X
-						this.getLocation().move(1, 0);
-					} else if ((this.getLocation().getX() > getRide().getEndPos().getX())) { //backwards along X
-						this.getLocation().move(-1, 0);
-					} else if ((this.getLocation().getY() < getRide().getEndPos().getY())){ //forwards along Y
-						this.getLocation().move(0, 1);
-					} else if ((this.getLocation().getY() > getRide().getEndPos().getY())) { //backwards along Y
-						this.getLocation().move(0, -1);
-					}
+					System.out.println("Vehicle ride is in progress");
 					if (this.ride.getDistanceLeft() == 0) {
 						ridesCompleted.add(this.ride);
+						System.out.println("Ride has been completed");
 						this.ride = null;
 						this.atStartPoint = false;
+					} else {
+						this.ride.tick();
+						if ((this.getLocation().getX() < getRide().getEndPos().getX())) { //forwards along X
+							this.getLocation().move(1, 0);
+						} else if ((this.getLocation().getX() > getRide().getEndPos().getX())) { //backwards along X
+							this.getLocation().move(-1, 0);
+						} else if ((this.getLocation().getY() < getRide().getEndPos().getY())){ //forwards along Y
+							this.getLocation().move(0, 1);
+						} else if ((this.getLocation().getY() > getRide().getEndPos().getY())) { //backwards along Y
+							this.getLocation().move(0, -1);
+						}
 					}
 				}
 			}

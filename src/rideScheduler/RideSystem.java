@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 import importer.Importer;
+import trip.Ride;
+import trip.Vehicle;
 
 public class RideSystem {
 	
@@ -34,6 +36,11 @@ public class RideSystem {
 			vehicleManager.tick();
 			System.out.println("Current Tick is " + ticker);
 		}
+		
+		for (Vehicle vehicle : vehicleManager.getVehicles()) {
+			System.out.println(vehicle.toString());
+		}
+		
 	}
 	
 	private static int ticker;
