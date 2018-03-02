@@ -67,13 +67,15 @@ public class Vehicle {
 			} else { //At start point
 				atStartPoint = true;
 			}
-			
-			this.ride.tick();
-			if (this.ride.getDistanceLeft() == 0) {
-				ridesCompleted.add(this.ride);
-				this.ride = null;
-				this.atStartPoint = false;
+			if (RideSystem.getTick() > this.ride.getEarliestStep()) {
+				this.ride.tick();
+				if (this.ride.getDistanceLeft() == 0) {
+					ridesCompleted.add(this.ride);
+					this.ride = null;
+					this.atStartPoint = false;
+				}
 			}
+			
 			
 		}
 		
