@@ -20,6 +20,10 @@ public class RideManager implements Ticker {
 		
 	}
 	
+	public void tick() {
+		vehicleManager.tick();
+	}
+	
 	public void initialise()
 	{
 		int free = Importer.getInstance().getNumberOfVehicles();
@@ -32,11 +36,6 @@ public class RideManager implements Ticker {
 			//TEMP
 			System.out.println(v.toString());
 		}
-	}
-	
-	public void tick() 
-	{
-		
 	}
 	
 	public void assignNextRide()
