@@ -38,6 +38,6 @@ public class Coordinate {
 	}
 	
 	public int getDistanceBetween(Coordinate end) {
-		return Math.abs((xPos-end.getX())+(yPos-end.getY()));
+		return (Math.abs(xPos-end.getX()) + Math.abs(yPos-end.getY()));
 	}
 }

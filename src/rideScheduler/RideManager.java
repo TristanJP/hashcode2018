@@ -21,8 +21,18 @@ public class RideManager implements Ticker {
 	}
 	
 	public void tick() {
+		System.out.println("cunt");
 		vehicleManager.tick();
-		findClosestVehicle();
+		//findClosestVehicle();
+		
+		
+		ArrayList<Vehicle> av = vehicleManager.getAvailableVehicles();
+		while (av.size() > 0) {
+			Ride r = rideQueue.poll();
+			pendingRides.add(r);
+			av.get(0).setRide(r);
+			System.out.println("newRide");
+		}
 	}
 	
 	public void initialise()

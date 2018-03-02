@@ -33,7 +33,7 @@ public class RideSystem {
 		
 		while (ticker < importer.getNumberOfSteps()) {
 			tick();
-			vehicleManager.tick();
+			rideManager.tick();
 			//System.out.println("Current Tick is " + ticker);
 		}
 				
