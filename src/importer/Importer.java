@@ -58,9 +58,9 @@ public class Importer {
 							this.parameters[i] = new Integer(params[i]);
 						}
 						firstLine = false;
-						for (int i = 0; i < parameters.length; i++) {
-							System.out.println(parameters[i]);
-						}
+						//for (int i = 0; i < parameters.length; i++) {
+						//	System.out.println(parameters[i]);
+						//}
 					} else {
 						String[] params;
 						params = line.split(" ");
