@@ -8,7 +8,6 @@ public class Ride implements Ticker {
 	private Integer id;
 	private Coordinate startPos, endPos;
 	private int earliestStep, latestStep, distance, distanceLeft;
-	private Vehicle assigned;
 	
 	public Ride(Integer id, Coordinate startPosition, Coordinate endPosition, int earliestStep, int latestStep) {
 		this.id = id;
@@ -18,8 +17,6 @@ public class Ride implements Ticker {
 		setLatestStep(latestStep);
 		setDistance();
 		setDistanceLeft(distance);
-	
-		assigned = null;
 	}
 	
 	public Coordinate getStartPos() {
@@ -87,9 +84,5 @@ public class Ride implements Ticker {
 
 	public String toString() {
 		return this.id.toString();
-	}
-	
-	public Vehicle getVehicle() {
-		return assigned;
 	}
 }
