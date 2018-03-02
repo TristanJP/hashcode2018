@@ -33,9 +33,6 @@ public class RideManager implements Ticker {
 			Ride r = rideQueue.poll();
 			pendingRides.add(r);
 			v.setRide(r);	
-			
-			//TEMP
-			System.out.println(v.toString());
 		}
 	}
 	

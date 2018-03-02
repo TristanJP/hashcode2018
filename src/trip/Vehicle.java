@@ -76,15 +76,15 @@ public class Vehicle {
 			
 			if ((this.getLocation().getX() == this.getRide().getStartPos().getX()) &&(this.getLocation().getY() == this.getRide().getStartPos().getY())) {
 				this.atStartPoint = true;
-				System.out.println("Vehicle is at start point and waiting");
+				//System.out.println("Vehicle is at start point and waiting");
 			}
 			
 			if (isAtStartPoint()) {
 				if (RideSystem.getTick() > this.ride.getEarliestStep()) {
-					System.out.println("Vehicle ride is in progress");
+					//System.out.println("Vehicle ride is in progress");
 					if (this.ride.getDistanceLeft() == 0) {
 						ridesCompleted.add(this.ride);
-						System.out.println("Ride has been completed");
+						//System.out.println("Ride has been completed");
 						this.ride = null;
 						this.atStartPoint = false;
 					} else {

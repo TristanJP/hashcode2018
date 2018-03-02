@@ -12,14 +12,14 @@ import trip.Vehicle;
 public class RideSystem {
 	
 	private void mainMethod() {
-		
+		/*
 		try {
 			System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		*/
 		
 		Importer importer = Importer.getInstance();
 		
@@ -34,17 +34,12 @@ public class RideSystem {
 		while (ticker < importer.getNumberOfSteps()) {
 			tick();
 			vehicleManager.tick();
-			System.out.println("Current Tick is " + ticker);
+			//System.out.println("Current Tick is " + ticker);
 		}
-		
-		System.out.println(vehicleManager.getVehicles().size());
-		
-		int count = 1;
+				
 		for (Vehicle vehicle : vehicleManager.getVehicles()) {
-			System.out.println(count + ") " + vehicle.toString());
-			count++;
-		}
-		
+			System.out.println(vehicle.toString());
+		}		
 	}
 	
 	private static int ticker;

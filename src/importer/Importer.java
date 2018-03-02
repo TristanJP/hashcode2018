@@ -79,7 +79,7 @@ public class Importer {
 						//number of steps
 					}
 				}
-				System.out.println("File Imported");
+				//System.out.println("File Imported");
 			} catch (FileNotFoundException ex) {
 				System.out.println("No file is present at this path.");
 			} catch (IOException ex) {
