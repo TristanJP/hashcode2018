@@ -87,7 +87,7 @@ public class Vehicle {
 					if (this.ride.getDistanceLeft() == 0) {
 						ridesCompleted.add(this.ride);
 						//System.out.println("Ride has been completed");
-						this.ride = null;
+						removeRide();
 						this.atStartPoint = false;
 					} else {
 						this.ride.tick();
