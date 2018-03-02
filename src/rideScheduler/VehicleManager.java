@@ -60,5 +60,11 @@ public class VehicleManager {
 	public Vehicle getVehicle(int index) {
 		return vehicles.get(index);
 	}
+	
+	public tick() {
+		for (Vehicle vehicle : vehicles) {
+			vehicle.tick();
+		}
+	}
 
 }
