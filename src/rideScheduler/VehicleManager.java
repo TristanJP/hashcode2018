@@ -12,6 +12,7 @@ public class VehicleManager implements Ticker {
 	public VehicleManager(int vNum)
 	{
 		vehicles = new ArrayList<Vehicle>(); 
+		availableVehicles = new ArrayList<Vehicle>();
 		for(int i = 0; i < vNum; i++)
 		{
 			Vehicle v = new Vehicle(this);

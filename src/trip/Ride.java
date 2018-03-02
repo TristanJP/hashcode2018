@@ -67,7 +67,7 @@ public class Ride implements Ticker {
 	}
 
 	private void setDistance() {
-		distance = Math.abs((startPos.getX()-endPos.getX())+(startPos.getY()-endPos.getY()));
+		distance = startPos.getDistanceBetween(endPos);
 	}
 	
 	/**

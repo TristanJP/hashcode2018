@@ -9,6 +9,10 @@ public class RideSystem {
 	public static void tick() {
 		ticker++;
 	}
+	
+	public static int getTick() {
+		return ticker;
+	}
 
 	public static void main(String args[]) {
 		Importer importer = Importer.getInstance();
