@@ -8,6 +8,7 @@ public class VehicleManager {
 	
 	private ArrayList<Vehicle> vehicles;
 	
+	
 	public VehicleManager(int vNum)
 	{
 		vehicles = new ArrayList<Vehicle>(); 
@@ -21,8 +22,8 @@ public class VehicleManager {
 		Coordinate newPos = vehicle.getRide().getEndPos();
 		int indexToInsert = 0;
 		
-		indexToInsert = sortX(indexToInsert, newPos);
-		indexToInsert = sortY(indexToInsert, newPos);
+		//indexToInsert = sortX(indexToInsert, newPos);
+		//indexToInsert = sortY(indexToInsert, newPos);
 		
 		vehicles.remove(vehicle);
 		try {

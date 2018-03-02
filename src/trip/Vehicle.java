@@ -29,7 +29,7 @@ public class Vehicle {
 	public void setRide(Ride cRide)
 	{
 		ride = cRide;
-		vehicleManager.updateList(this);
+		//vehicleManager.updateList(this);
 	}
 	
 	public void tick() {
