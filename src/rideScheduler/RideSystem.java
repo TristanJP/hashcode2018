@@ -37,8 +37,12 @@ public class RideSystem {
 			System.out.println("Current Tick is " + ticker);
 		}
 		
+		System.out.println(vehicleManager.getVehicles().size());
+		
+		int count = 1;
 		for (Vehicle vehicle : vehicleManager.getVehicles()) {
-			System.out.println(vehicle.toString());
+			System.out.println(count + ") " + vehicle.toString());
+			count++;
 		}
 		
 	}
