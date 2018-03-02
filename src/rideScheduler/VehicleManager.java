@@ -8,6 +8,7 @@ public class VehicleManager {
 	
 	private ArrayList<Vehicle> vehicles;
 	
+	
 	public VehicleManager(int vNum)
 	{
 		vehicles = new ArrayList<Vehicle>(); 
