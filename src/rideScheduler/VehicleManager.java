@@ -7,14 +7,17 @@ import trip.Vehicle;
 public class VehicleManager implements Ticker {
 	
 	private ArrayList<Vehicle> vehicles;
-	
+	private ArrayList<Vehicle> availableVehicles;
 	
 	public VehicleManager(int vNum)
 	{
 		vehicles = new ArrayList<Vehicle>(); 
 		for(int i = 0; i < vNum; i++)
 		{
-			vehicles.add(new Vehicle(this));
+			Vehicle v = new Vehicle(this);
+			
+			vehicles.add(v);
+			availableVehicles.add(v);
 		}
 	}
 	
@@ -77,6 +80,14 @@ public class VehicleManager implements Ticker {
 	
 	public Vehicle getVehicle(int index) {
 		return vehicles.get(index);
+	}
+	
+	public void makeAvailable(Vehicle v) {
+		availableVehicles.add(v);
+	}
+	
+	public void makeUnavailable(Vehicle v) {
+		availableVehicles.remove(v);
 	}
 	
 	public void tick() {

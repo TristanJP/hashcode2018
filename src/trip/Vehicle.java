@@ -54,6 +54,11 @@ public class Vehicle {
 		return returnString;
 	}
 	
+	public void removeRide()
+	{
+		ride = null;
+	}
+	
 	public void tick() {
 		if (getRide() != null) {
 			if ((this.getLocation().getX() -  getRide().getStartPos().getX()) > 0) { //forwards along X
