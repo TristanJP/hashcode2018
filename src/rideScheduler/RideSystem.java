@@ -28,9 +28,7 @@ public class RideSystem {
 		VehicleManager vehicleManager = new VehicleManager(importer.getNumberOfVehicles());
 		
 		RideManager rideManager = new RideManager(rideQueue, vehicleManager);
-		
-		rideManager.initialise();
-		
+				
 		while (ticker < importer.getNumberOfSteps()) {
 			tick();
 			rideManager.tick();
