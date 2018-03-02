@@ -32,6 +32,11 @@ public class Vehicle {
 		//vehicleManager.updateList(this);
 	}
 	
+	public void removeRide()
+	{
+		ride = null;
+	}
+	
 	public void tick() {
 		this.ride.tick();
 		if (this.ride.getDistanceLeft() == 0) {
