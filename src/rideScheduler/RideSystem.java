@@ -1,10 +1,24 @@
 package rideScheduler;
 
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
 import importer.Importer;
 
 public class RideSystem {
 	
 	private void mainMethod() {
+		
+		try {
+			System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		Importer importer = Importer.getInstance();
 		
 		RideQueue rideQueue = new RideQueue();
