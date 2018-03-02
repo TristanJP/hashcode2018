@@ -22,6 +22,7 @@ public class RideManager implements Ticker {
 	
 	public void tick() {
 		vehicleManager.tick();
+		findClosestVehicle();
 	}
 	
 	public void initialise()

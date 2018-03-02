@@ -36,6 +36,7 @@ public class Vehicle {
 	public void setRide(Ride cRide)
 	{
 		ride = cRide;
+		vehicleManager.getAvailableVehicles().remove(this);
 		//vehicleManager.updateList(this);
 	}
 	
@@ -58,6 +59,7 @@ public class Vehicle {
 	public void removeRide()
 	{
 		ride = null;
+		vehicleManager.getAvailableVehicles().add(this);
 	}
 	
 	public void tick() {
