@@ -21,16 +21,10 @@ public class RideManager implements Ticker {
 		vehicleManager = vm;
 		
 		initialise();
-		
-		//debug
-		ticks = 0;
 	}
 	
 	public void tick() {
-		//System.out.println("cunt");
 		vehicleManager.tick();
-		
-		//pendingRides.trimToSize();
 		
 		//debug
 				ticks++;
@@ -47,25 +41,21 @@ public class RideManager implements Ticker {
 			}
 		}
 		
-		
-		
-		//pendingRides.trimToSize();
-		
-		
-		
+		pendingRides.trimToSize();
+
 		findClosestVehicle();
 		
+		assignFromQueue();
 		
+		
+	}
+	
+	public void assignFromQueue() {
 		ArrayList<Vehicle> av = vehicleManager.getAvailableVehicles();
-		while (av.size() > 0) {
+		while (av.size() > 0 && rideQueue.peek() != null) {
 			Ride r = rideQueue.poll();
-			if (r != null) {
 			pendingRides.add(r);
 			av.get(0).setRide(r);
-			}
-			else {
-				//System.out.println("ride queue empty");
-			}
 			//System.out.println("newRide");
 		}
 	}
