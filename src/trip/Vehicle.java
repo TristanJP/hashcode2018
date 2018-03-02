@@ -13,6 +13,7 @@ public class Vehicle {
 	
 	private ArrayList<Ride> ridesCompleted = new ArrayList<>();
 	private boolean atStartPoint = false;
+	private boolean rideStarted = false;
 	
 	public Vehicle(VehicleManager vm)
 	{
