@@ -27,7 +27,7 @@ public class RideManager implements Ticker {
 			v.setRide(r);	
 			
 			//TEMP
-			System.out.println(1 + " " + r);
+			System.out.println(v.toString());
 		}
 	}
 	
