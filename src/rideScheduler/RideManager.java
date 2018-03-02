@@ -21,7 +21,7 @@ public class RideManager implements Ticker {
 	}
 	
 	public void tick() {
-		System.out.println("cunt");
+		//System.out.println("cunt");
 		vehicleManager.tick();
 		//findClosestVehicle();
 		
@@ -31,7 +31,7 @@ public class RideManager implements Ticker {
 			Ride r = rideQueue.poll();
 			pendingRides.add(r);
 			av.get(0).setRide(r);
-			System.out.println("newRide");
+			//System.out.println("newRide");
 		}
 	}
 	

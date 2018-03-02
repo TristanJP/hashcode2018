@@ -76,7 +76,7 @@ public class Vehicle {
 				}
 			}
 			
-			if ((this.getLocation().getX() == this.getRide().getStartPos().getX()) &&(this.getLocation().getY() == this.getRide().getStartPos().getY())) {
+			if ((this.getLocation().getX() == this.getRide().getStartPos().getX()) && (this.getLocation().getY() == this.getRide().getStartPos().getY())) {
 				this.atStartPoint = true;
 				//System.out.println("Vehicle is at start point and waiting");
 			}
