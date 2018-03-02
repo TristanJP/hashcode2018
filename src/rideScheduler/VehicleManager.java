@@ -22,8 +22,8 @@ public class VehicleManager implements Ticker {
 		Coordinate newPos = vehicle.getRide().getEndPos();
 		int indexToInsert = 0;
 		
-		//indexToInsert = sortX(indexToInsert, newPos);
-		//indexToInsert = sortY(indexToInsert, newPos);
+		indexToInsert = sortX(indexToInsert, newPos);
+		indexToInsert = sortY(indexToInsert, newPos);
 		
 		vehicles.remove(vehicle);
 		try {
